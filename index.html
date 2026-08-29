@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>疗愈·湾 | Cherry Cove Spa Flagship</title>
+    <style>
+        :root {
+            --bg-silk: #F7EFE3;
+            --bg-velvet: #161413;
+            --clay-prime: #A16635;
+            --clay-deep: #7A4720;
+            --olive-gold: #545945;
+            --text-dark: #2A2724;
+            --text-gold: #E0D7BA;
+            --white: #FFFFFF;
+            --glass-light: rgba(247, 239, 227, 0.9);
+            --curve-premium: cubic-bezier(0.16, 1, 0.3, 1);
+            
+            /* Organic Premium Texture Overlay */
+            --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-silk);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Applied Organic Micro-Texture Wrapper */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: var(--grain);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Fixed Mobile Slim Header with Dynamic Blur */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 5%;
+            background: var(--glass-light);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            border-bottom: 1px solid rgba(161, 102, 53, 0.08);
+            box-shadow: 0 4px 30px rgba(42, 39, 36, 0.02);
+        }
+
+        .brand-identity h1 {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2.5px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+        }
+
+        .brand-identity h1 b {
+            font-weight: 800;
+            color: var(--clay-prime);
+            letter-spacing: 0.5px;
+        }
+
+        .brand-identity p {
+            font-size: 8px;
+            text-transform: uppercase;
+            letter-spacing: 3.5px;
+            color: var(--olive-gold);
+            font-weight: 700;
+            margin-top: 3px;
+        }
+
+        .cta-pill-luxury {
+            background: linear-gradient(135deg, var(--text-dark), #383430);
+            color: var(--bg-silk);
+            padding: 11px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 4px 15px rgba(161, 102, 53, 0.15);
+        }
+
+        /* Immersive Parallax-Ready Hero Stage */
+        .cinematic-hero {
+            position: relative;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(to bottom, rgba(22, 20, 19, 0.25), rgba(22, 20, 19, 0.7)), url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 0 28px;
+        }
+
+        .hero-lens-content {
+            z-index: 10;
+            transform: translateY(0);
+            animation: premiumReveal 1.4s var(--curve-premium);
+        }
+
+        .hero-lens-content .gold-mini {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--text-gold);
+            margin-bottom: 18px;
+            font-weight: 700;
+            display: inline-block;
+            background: rgba(255,255,255,0.05);
+            padding: 4px 12px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-lens-content h2 {
+            font-size: 38px;
+            font-weight: 200;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            margin-bottom: 22px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-lens-content h2 b {
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .hero-lens-content p {
+            font-size: 15px;
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto 35px auto;
+            color: rgba(247, 239, 227, 0.85);
+            line-height: 1.6;
+        }
+
+        /* Seamless Asymmetric Narrative Frame */
+        .asymmetric-story-section {
+            max-width: 1100px;
+            margin: -50px auto 60px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 40;
+        }
+
+        .story-luxury-frame {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 35px 25px;
+            box-shadow: 0 30px 70px rgba(42, 39, 36, 0.08);
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            border: 1px solid rgba(161, 102, 53, 0.04);
+        }
+
+        .story-text-side h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+        }
+
+        .story-text-side h3 span {
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--clay-prime);
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        .story-text-side p {
+            font-size: 14.5px;
+            color: #5E5852;
+            margin-bottom: 18px;
+        }
+
+        /* Tactile Navigation Helper Widget Block */
+        .concierge-widget-side {
+            background: linear-gradient(180deg, #FAF7F2, #F3ECE2);
+            border-radius: 18px;
+            padding: 24px 20px;
+            border: 1px solid rgba(161, 102, 53, 0.06);
+            box-shadow: inset 0 2px 10px rgba(255,255,255,0.6);
+        }
+
+        .concierge-widget-side h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--olive-gold);
+            margin-bottom: 18px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .interactive-link {
+            background: var(--white);
+            padding: 14px 18px;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(161, 102, 53, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(42, 39, 36, 0.02);
+            transition: all 0.4s var(--curve-premium);
+        }
+
+        .interactive-link span {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .interactive-link .arrow {
+            color: var(--clay-prime);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Tactile Glow Promotional Section */
+        .luxury-promos-section {
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .promo-curved-wrapper {
+            background: linear-gradient(145deg, #242220, #131211);
+            background-image: var(--grain), linear-gradient(145deg, #242220, #131211);
+            border-radius: 24px;
+            padding: 35px 24px;
+            color: var(--text-gold);
+            box-shadow: 0 25px 55px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .promo-header-center {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .promo-header-center h3 {
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .promo-flex-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .luxury-promo-inner-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: inset 0 1px 20px rgba(255,255,255,0.01);
+        }
+
+        .luxury-promo-inner-card h5 {
+            font-size: 14.5px;
+            color: var(--clay-prime);
+            margin-bottom: 14px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .luxury-promo-inner-card ul { list-style: none; }
+        .luxury-promo-inner-card li {
+            font-size: 13px;
+            margin-bottom: 10px;
+            opacity: 0.85;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+        .luxury-promo-inner-card li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--clay-prime);
+            font-size: 10px;
+        }
+
+        /* Premium Floating Roster Grid Architecture */
+        .schedule-flagship-section {
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            scroll-margin-top: 100px;
+        }
+
+        .roster-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 35px 24px;
+            box-shadow: 0 20px 50px rgba(42, 39, 36, 0.04);
+            border: 1px solid rgba(161, 102, 53, 0.04);
+        }
+
+        .roster-card h3 {
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: var(--olive-gold);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .roster-flex-row {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .roster-day-pill {
+            background: linear-gradient(180deg, #FCFAF7, #F6F1EA);
+            padding: 18px 4px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(161, 102, 53, 0.06);
+            box-shadow: 0 4px 10px rgba(42, 39, 36, 0.01);
+        }
+
+        .roster-day-pill .day-title {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--clay-prime);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .roster-day-pill .staff-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.5;
+            white-space: pre-line;
+        }
+
+        /* Immersive Premium Menu Viewport Section */
+        .menu-flagship-wrapper {
+            background-color: #EFE6D9;
+            background-image: var(--grain);
+            padding: 70px 0;
+            scroll-margin-top: 80px;
+            border-top: 1px solid rgba(161, 102, 53, 0.05);
+        }
+
+        .menu-container-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .menu-header-luxury {
+            text-align: center;
+            margin-bottom: 35px;
+            scroll-margin-top: 90px;
+        }
+
+        .menu-header-luxury h4 {
+            font-size: 22px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .menu-header-luxury h4 b { font-weight: 800; color: var(--olive-gold); }
+        
+        .menu-header-luxury .diamond-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 12px;
+        }
+        .menu-header-luxury .diamond-line::before, .menu-header-luxury .diamond-line::after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background-color: var(--clay-prime);
+            opacity: 0.5;
+        }
+        .menu-header-luxury .diamond-line span {
+            font-size: 8px;
+            margin: 0 10px;
+            color: var(--clay-prime);
+        }
+
+        .luxury-menu-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 30px 24px;
+            box-shadow: 0 25px 55px rgba(42, 39, 36, 0.05);
+            margin-bottom: 45px;
+            border: 1px solid rgba(161, 102, 53, 0.03);
+        }
+
+        .grid-header-luxury {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr 1fr 1fr;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #EFE6D9;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--clay-prime);
+            font-weight: 800;
+        }
+
+        .grid-row-luxury {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr 1fr 1fr;
+            padding: 22px 0;
+            border-bottom: 1px solid #FAF8F4;
+            align-items: center;
+        }
+
+        .grid-row-luxury:last-child { border-bottom: none; }
+
+        .luxury-service-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text-dark);
+            padding-right: 10px;
+        }
+
+        .luxury-service-title span {
+            display: block;
+            font-size: 12.5px;
+            color: #726A61;
+            font-weight: 400;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+
+        .luxury-price-tag {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .custom-combo-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0;
+            border-bottom: 1px solid #FAF8F4;
+        }
+        .custom-combo-row:last-child { border-bottom: none; }
+
+        .insurance-badge {
+            background: #F0F5F9;
+            border-left: 4px solid #2A6F97;
+            padding: 15px 20px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 15px;
+            font-size: 13.5px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Premium Deep Velvet Footer Structure */
+        footer {
+            background-color: var(--bg-velvet);
+            background-image: var(--grain), linear-gradient(to bottom, #161413, #0D0C0C);
+            color: rgba(247, 239, 227, 0.55);
+            padding: 70px 24px 40px 24px;
+            scroll-margin-top: 80px;
+            border-top: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .footer-max-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand-summary h4 {
+            color: var(--white);
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            font-weight: 800;
+        }
+
+        .footer-brand-summary p {
+            font-size: 13px;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-col-luxury h5 {
+            color: var(--bg-silk);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+            font-weight: 700;
+            opacity: 0.9;
+        }
+
+        .footer-col-luxury p {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-col-luxury a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Fixed Mobile Floating App Dock with Ambient Glass Shadow */
+        .luxury-floating-dock {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 64px;
+            background: rgba(22, 20, 19, 0.94);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 100px;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px 0 24px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+            border: 1px solid rgba(255,255,255,0.09);
+            animation: dockEntrance 1.2s var(--curve-premium);
+        }
+
+        .dock-brand-text {
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .dock-brand-text span {
+            color: var(--text-gold);
+            font-weight: 400;
+            display: block;
+            font-size: 9px;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        .dock-cta-action {
+            background-color: var(--white);
+            color: var(--bg-velvet);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 13px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Pure CSS Immersive Entry Keyframes */
+        @keyframes premiumReveal {
+            from { opacity: 0; transform: translateY(25px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes dockEntrance {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sophisticated Responsive Mobile Engine Breakpoints */
+        @media (max-width: 900px) {
+            header { padding: 14px 4%; }
+            .brand-identity h1 { font-size: 16px; }
+            
+            .story-luxury-frame { grid-template-columns: 1fr; gap: 35px; padding: 30px 20px; }
+            .footer-max-grid { grid-template-columns: 1fr; gap: 35px; }
+            .roster-flex-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        }
+
+        @media (max-width: 768px) {
+            body { padding-bottom: 90px; }
+            .cinematic-hero { height: 55vh; }
+            .hero-lens-content h2 { font-size: 30px; }
+            .hero-lens-content p { font-size: 14px; }
+            .asymmetric-story-section { margin-top: -35px; margin-bottom: 45px; }
+            .promo-curved-wrapper { padding: 30px 20px; }
+            .promo-flex-cards { grid-template-columns: 1fr; gap: 20px; }
+            
+            .roster-flex-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .roster-day-pill { padding: 14px 4px; border-radius: 12px; }
+            
+            .grid-header-luxury { font-size: 9px; grid-template-columns: 1.6fr 1fr 1fr 1fr; padding-bottom: 10px; }
+            .grid-row-luxury { grid-template-columns: 1.6fr 1fr 1fr 1fr; padding: 18px 0; }
+            .luxury-service-title { font-size: 13.5px; }
+            .luxury-service-title span { font-size: 12px; margin-top: 3px; }
+            .luxury-price-tag { font-size: 13.5px; }
+            .luxury-menu-card { padding: 20px 15px; border-radius: 18px; margin-bottom: 35px; }
+            .schedule-flagship-section { margin-bottom: 45px; }
+        }
+
+        @media (min-width: 901px) {
+            .luxury-floating-dock { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-identity">
+            <h1>疗愈·湾 <b>CHERRY COVE</b></h1>
+            <p>The Flagship Experience</p>
+        </div>
+        <a href="tel:6479677884" class="cta-pill-luxury">Secure Booking</a>
+    </header>
+
+    <section class="cinematic-hero">
+        <div class="hero-lens-content">
+            <span class="gold-mini">A New Paradigm of Wellness</span>
+            <h2>Your Sanctuary of<br><b>Restorative Calm</b></h2>
+            <p>Escape the sensory weight of everyday life. Experience elite therapeutic mastery designed completely for your body's recovery in Markham.</p>
+            <a href="#menu" class="cta-pill-luxury" style="background: var(--white); color: var(--text-dark); box-shadow: 0 10px 25px rgba(0,0,0,0.15);">Explore Treatments</a>
+        </div>
+    </section>
+
+    <section class="asymmetric-story-section">
+        <div class="story-luxury-frame">
+            <div class="story-text-side">
+                <h3>Our Story <span>疗愈之旅</span></h3>
+                <p>Welcome to Cherry Cove Spa. Founded on the belief that true wellness comes from balanced restoration, our brand-new boutique storefront in Markham provides an oasis of tranquility designed to melt away everyday physical fatigue.</p>
+                <p>Whether you seek relief from deep chronic tension or simply a calm space to unplug and unwind, our certified therapists combine traditional eastern disciplines with contemporary relaxation methods to deliver an unmatched therapeutic treatment customized perfectly to your body's needs.</p>
+            </div>
+            
+            <div class="concierge-widget-side">
+                <h4>Quick-Jump Concierge</h4>
+                <a href="#massage-sec" class="interactive-link">
+                    <span>1. Therapeutic Massage / 按摩服务</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="#combo-sec" class="interactive-link">
+                    <span>2. Combo Packages / 组合套餐</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="#nails-sec" class="interactive-link">
+                    <span>3. Nail Art & Care / 美甲与养护</span>
+                    <span class="arrow">→</span>
+                </a>
+                <a href="#facial-sec" class="interactive-link">
+                    <span>4. Body & Facial / 身体与面部护理</span>
+                    <span class="arrow">→</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="luxury-promos-section">
+        <div class="promo-curved-wrapper">
+            <div class="promo-header-center">
+                <h3>开业酬宾盛典 • Grand Opening Specials</h3>
+            </div>
+            <div class="promo-flex-cards">
+                <div class="luxury-promo-inner-card">
+                    <h5>活动一：按摩养生系列 (Massage & Wellness)</h5>
+                    <ul>
+                        <li>买十送五 (Buy 10 Get 5 Free)</li>
+                        <li>限前50名贵宾尊享 (Limited to first 50 customers)</li>
+                        <li>仅限现金支付 (Cash Only Promotion)</li>
+                    </ul>
+                </div>
+                <div class="luxury-promo-inner-card">
+                    <h5>活动二：全场养护实用系列 (Wellness & Care)</h5>
+                    <ul>
+                        <li>充 $600 送 $200 (Deposit $600, Get $200 Bonus)</li>
+                        <li>充 $1000 送 $400 (Deposit $1000, Get $400 Bonus)</li>
+                        <li>充 $2000 送 $1000 (Deposit $2000, Get $1000 Bonus)</li>
+                        <li>限前50名贵宾尊享 / 仅限现金 (Cash Only)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule-flagship-section" id="roster">
+        <div class="roster-card">
+            <h3>Therapist Weekly Schedule | 芳疗师排班表</h3>
+            <div class="roster-flex-row">
+                <div class="roster-day-pill" id="day-mon">
+                    <div class="day-title">Mon / 一</div>
+                    <div class="staff-title">Cherry<br>ViVi</div>
+                </div>
+                <div class="roster-day-pill" id="day-tue">
+                    <div class="day-title">Tue / 二</div>
+                    <div class="staff-title">Cherry<br>ViVi</div>
+                </div>
+                <div class="roster-day-pill" id="day-wed">
+                    <div class="day-title">Wed / 三</div>
+                    <div class="staff-title">Cherry<br>ViVi<br>Ada</div>
+                </div>
+                <div class="roster-day-pill" id="day-thu">
+                    <div class="day-title">Thu / 四</div>
+                    <div class="staff-title">Cherry<br>ViVi<br>Ada</div>
+                </div>
+                <div class="roster-day-pill" id="day-fri">
+                    <div class="day-title">Fri / 五</div>
+                    <div class="staff-title">Cherry<br>ViVi</div>
+                </div>
+                <div class="roster-day-pill" id="day-sat">
+                    <div class="day-title">Sat / 六</div>
+                    <div class="staff-title">Cherry<br>ViVi</div>
+                </div>
+                <div class="roster-day-pill" id="day-sun">
+                    <div class="day-title">Sun / 日</div>
+                    <div class="staff-title">Cherry<br>ViVi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-flagship-wrapper" id="menu">
+        <div class="menu-container-inner">
+            
+            <!-- SECTION 1: THERAPEUTIC MASSAGE -->
+            <div class="menu-header-luxury" id="massage-sec">
+                <h4>Therapeutic Massage <b>按摩服务</b></h4>
+                <div class="diamond-line"><span>✦</span></div>
+            </div>
+
+            <div class="luxury-menu-card">
+                <div class="grid-header-luxury">
+                    <div>Treatment Details</div>
+                    <div>60 Min</div>
+                    <div>75 Min</div>
+                    <div>90 Min</div>
+                </div>
+                
+                <div class="grid-row-luxury">
+                    <div class="luxury-service-title">
+                        General Relaxation Massage
+                        <span>常规放松按摩 — Immersive stress-relief full body therapy</span>
+                    </div>
+                    <div class="luxury-price-tag">$65</div>
+                    <div class="luxury-price-tag">$80</div>
+                    <div class="luxury-price-tag">$100</div>
+                </div>
+
+                <div class="grid-row-luxury">
+                    <div class="luxury-service-title">
+                        Thai Stretch Massage
+                        <span>泰式拉筋按摩 — Deep alignment structural dynamic body stretches</span>
+                    </div>
+                    <div class="luxury-price-tag">$80</div>
+                    <div class="luxury-price-tag">$90</div>
+                    <div class="luxury-price-tag">$110</div>
+                </div>
+
+                <div class="grid-row-luxury">
+                    <div class="luxury-service-title">
+                        Deep Tissue Massage
+                        <span>深层组织按摩 — Intense focused pressure targeting muscular nodes</span>
+                    </div>
+                    <div class="luxury-price-tag">$80</div>
+                    <div class="luxury-price-tag">$90</div>
+                    <div class="luxury-price-tag">$110</div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: COMBO PACKAGES -->
+            <div class="menu-header-luxury" id="combo-sec">
+                <h4>Combo Packages <b>组合套餐</b></h4>
+                <div class="diamond-line"><span>✦</span></div>
+            </div>
+
+            <div class="luxury-menu-card">
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">General Massage + Foot Reflexology (30min + 30min) <span>常规按摩 + 足疗</span></div>
+                    <div class="luxury-price-tag">$75</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Thai / Deep Tissue + Foot Reflexology (45min + 30min) <span>泰式 / 深层按摩 + 足疗</span></div>
+                    <div class="luxury-price-tag">$85</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Thai / Deep Tissue + Foot Reflexology (60min + 45min) <span>泰式 / 深层按摩 + 足疗</span></div>
+                    <div class="luxury-price-tag">$110</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Japanese style Sleep-Enhancing Head Therapy + Foot Reflexology (45min + 30min) <span>日式促睡眠头疗 + 足疗</span></div>
+                    <div class="luxury-price-tag">$90</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Japanese style Sleep-Enhancing Head Therapy + Deep Tissue (45min + 45min) <span>促睡眠头疗 + 深层按摩</span></div>
+                    <div class="luxury-price-tag">$110</div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: NAIL ART & CARE -->
+            <div class="menu-header-luxury" id="nails-sec">
+                <h4>Nail Art & Care <b>美甲与指尖养护</b></h4>
+                <div class="diamond-line"><span>✦</span></div>
+            </div>
+
+            <div class="luxury-menu-card">
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Gel Polish — Solid Color <span>美甲胶单色</span></div>
+                    <div class="luxury-price-tag">$45</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Regular Polish — Solid Color <span>美甲无胶单色</span></div>
+                    <div class="luxury-price-tag">$38</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Cat Eye Effect <span>加购猫眼款式 (Add-on)</span></div>
+                    <div class="luxury-price-tag">+$15</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Trendy Nail Designs <span>各类美甲造型款式</span></div>
+                    <div class="luxury-price-tag">$60 - $80</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Nail Extensions <span>美甲延长服务 (Add-on)</span></div>
+                    <div class="luxury-price-tag">+$15</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Hand Care & Cuticle Treatment <span>手部养护及死皮护理</span></div>
+                    <div class="luxury-price-tag">$25</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Foot Care & Cuticle Treatment <span>脚部养护及死皮护理</span></div>
+                    <div class="luxury-price-tag">$30</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Onychomycosis Treatment (Fingers / Toes) <span>灰指甲康复治疗 (单指 / 脚趾)</span></div>
+                    <div class="luxury-price-tag">$120 up / EA</div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: BODY & FACIAL CARE -->
+            <div class="menu-header-luxury" id="facial-sec">
+                <h4>Body & Facial Care <b>身体与面部护理</b></h4>
+                <div class="diamond-line"><span>✦</span></div>
+            </div>
+
+            <div class="luxury-menu-card">
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Wellness Foot Reflexology <span>足底反射疗法 (60min)</span></div>
+                    <div class="luxury-price-tag">$70</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Head Therapy + Neck & Shoulder Relief <span>头部理疗 + 颈肩舒缓 (60min)</span></div>
+                    <div class="luxury-price-tag">$75</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Soothing Back Oil Massage <span>背部舒缓精油按摩 (30min)</span></div>
+                    <div class="luxury-price-tag">$40</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Oil Massage + Cupping <span>精油按摩 + 拔罐理疗 (30min)</span></div>
+                    <div class="luxury-price-tag">$40</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Full Body Scrub & Exfoliation <span>全身磨砂润肤去死皮</span></div>
+                    <div class="luxury-price-tag">$40</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Waxing Treatment <span>蜜蜡脱毛 (局部 / 全身)</span></div>
+                    <div class="luxury-price-tag">$30 - $80</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Deep Cleansing + Hydration Facial <span>脸部深层清洁 + 补水</span></div>
+                    <div class="luxury-price-tag">$80</div>
+                </div>
+                <div class="custom-combo-row">
+                    <div class="luxury-service-title">Facial Lymphatic Drainage Massage <span>脸部按摩淋巴排毒</span></div>
+                    <div class="luxury-price-tag">$60</div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-max-grid">
+            <div class="footer-brand-summary">
+                <h4>CHERRY COVE</h4>
+                <p>An elite, dedicated urban sanctuary built for precise muscle recovery and premium relaxation therapy in Markham.</p>
+            </div>
+            <div class="footer-col-luxury">
+                <h5>Sanctuary</h5>
+                <p>Cherry Cove Spa</p>
+                <p>Markham, Ontario</p>
+            </div>
+            <div class="footer-col-luxury">
+                <h5>Availability</h5>
+                <p>Monday — Sunday</p>
+                <p style="color: var(--white); font-weight: 700;">10:00 AM — 10:00 PM</p>
+            </div>
+            <div class="footer-col-luxury">
+                <h5>Concierge</h5>
+                <p>Call / Text directly:</p>
+                <p><a href="tel:6479677884">(647) 967-7884</a></p>
+            </div>
+        </div>
+        <p style="font-size: 11px; opacity: 0.2; letter-spacing: 1px;">© 2026 Cherry Cove Flagship. All Rights Privately Reserved.</p>
+    </footer>
+
+    <div class="luxury-floating-dock">
+        <div class="dock-brand-text">
+            CHERRY COVE
+            <span>Open until 10:00 PM</span>
+        </div>
+        <a href="tel:6479677884" class="dock-cta-action">Book Session</a>
+    </div>
+
+    <script>
+        // ⚠️ Google Sheet Connection Hook
+        const SHEET_ID = '1A2B3C_YOUR_SHEET_ID_HERE'; 
+        const SPREADSHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Sheet1`;
+
+        async function fetchLiveSchedule() {
+            try {
+                const response = await fetch(SPREADSHEET_URL);
+                if (!response.ok) throw new Error('Sheet fetch failed');
+                const csvText = await response.text();
+                const rows = csvText.split('\n').map(row => {
+                    return row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(cell => cell.replace(/^"|"$/g, '').trim());
+                });
+
+                const daysMapping = [
+                    { id: 'day-mon', index: 1 },
+                    { id: 'day-tue', index: 2 },
+                    { id: 'day-wed', index: 3 },
+                    { id: 'day-thu', index: 4 },
+                    { id: 'day-fri', index: 5 },
+                    { id: 'day-sat', index: 6 },
+                    { id: 'day-sun', index: 7 }
+                ];
+
+                daysMapping.forEach(item => {
+                    if (rows[item.index] && rows[item.index][1]) {
+                        const targetElement = document.querySelector(`#${item.id} .staff-title`);
+                        if (targetElement) {
+                            let namesStr = rows[item.index][1];
+                            let formattedNames = namesStr.split(/[,，\s]+/).join('<br>');
+                            targetElement.innerHTML = formattedNames || '—';
+                        }
+                    }
+                });
+            } catch (error) {
+                console.warn('Using offline backup fallback roster configuration.', error);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', fetchLiveSchedule);
+    </script>
+</body>
+</html>
